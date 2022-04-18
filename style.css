@@ -13,42 +13,42 @@ body {
 #main-play-area {
     background-color: black;
     background-image: url(img/space.png);
-    height: 600px;
-    width: 600px;
+    height: 800px;
+    width: 900px;
 }
 
 .game-instructions {
     position: relative;
     color: white;
-    left: 7rem;
+    left: 18rem;
     top: 0px;
 }
 
 .start-button {
     position: relative;
     color: white;
-    top: 9rem;
-    left: 15rem;
+    top: 12rem;
+    left: 25rem;
     cursor: pointer;
 }
 
 .player-shooter {
     position: relative;
-    height: 60px;
-    width: 70px;
+    height: 121px;
+    width: 160px;
     left: 20px;
     top: 250px
 }
 
 .laser {
     position: relative;
-    width: 40px;
-    height: 30px;
+    width: 60px;
+    height: 50px;
 }
 
 .alien {
-    height: 60px;
-    width: 70px;
+    height: 121px;
+    width: 160px;
     position: relative;
 }
 
@@ -58,8 +58,8 @@ body {
 }
 
 .dead-alien {
-    height: 60px;
-    width: 70px;
+    height: 121px;
+    width: 160px;
     position: relative;
     opacity: 0;
 }

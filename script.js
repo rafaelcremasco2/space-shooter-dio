@@ -22,7 +22,7 @@ function flyShip(event) {
 //função de subir
 function moveUp() {
     let topPosition = getComputedStyle(yourShip).getPropertyValue('top');
-    if(topPosition === "0px") {
+    if(topPosition === "50px") {
         return
     } else {
         let position = parseInt(topPosition);
@@ -34,7 +34,7 @@ function moveUp() {
 //função de descer
 function moveDown() {
     let topPosition = getComputedStyle(yourShip).getPropertyValue('top');
-    if(topPosition === "510px"){
+    if(topPosition === "650px"){
         return
     } else {
         let position = parseInt(topPosition);
@@ -74,7 +74,7 @@ function moveLaser(laser) {
             }
         })
 
-        if(xPosition === 340) {
+        if(xPosition > 460) {
             laser.remove();
         } else {
             laser.style.left = `${xPosition + 8}px`;
@@ -90,7 +90,7 @@ function createAliens() {
     newAlien.classList.add('alien');
     newAlien.classList.add('alien-transition');
     newAlien.style.left = '370px';
-    newAlien.style.top = `${Math.floor(Math.random() * 330) + 30}px`;
+    newAlien.style.top = `${Math.floor(Math.random() * 400) + 30}px`;
     playArea.appendChild(newAlien);
     moveAlien(newAlien);
 }
@@ -99,7 +99,7 @@ function createAliens() {
 function moveAlien(alien) {
     let moveAlienInterval = setInterval(() => {
         let xPosition = parseInt(window.getComputedStyle(alien).getPropertyValue('left'));
-        if(xPosition <= 50) {
+        if(xPosition <= 30) {
             if(Array.from(alien.classList).includes('dead-alien')) {
                 alien.remove();
             } else {
@@ -119,6 +119,7 @@ function checkLaserCollision(laser, alien) {
     let alienTop = parseInt(alien.style.top);
     let alienLeft = parseInt(alien.style.left);
     let alienBottom = alienTop - 30;
+    
     if(laserLeft != 340 && laserLeft + 40 >= alienLeft) {
         if(laserTop <= alienTop && laserTop >= alienBottom) {
             return true;
